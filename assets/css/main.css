@@ -4,6 +4,10 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
   
   body {
     font-family: 'Poppins', sans-serif;
@@ -325,4 +329,120 @@
     opacity: 1; /* Fade in */
     transform: translateY(0); /* Return to normal position */
   }
-  
+
+/* Projects Section */
+.projects-section {
+  padding: 120px 0; /* Increased vertical spacing */
+  background-color: #f9f9f9;
+}
+
+/* Project Card Layout */
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 6rem; /* Added spacing between project cards */
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+}
+
+/* Project Content */
+.project-content {
+  width: 38%; /* Golden Ratio for text */
+  background: #333;
+  color: #f0f0f0; /* Softer white for better contrast */
+  padding: 2.5rem; /* Increased padding */
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.project-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: #c29d30; /* Darker gold for better readability */
+  margin-bottom: 1rem;
+}
+
+.project-description,
+.project-tools {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* View Project Button */
+.project-link {
+  display: inline-block;
+  background-color: #D4AF37; /* Golden button */
+  color: #333; /* Text color */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: #b2912e; /* Darker gold on hover */
+  color: #fff;
+  transform: scale(1.05); /* Slight growth effect */
+}
+
+/* Project Image */
+.project-image {
+  width: 62%; /* Golden Ratio for images */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-image img:hover {
+  transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+/* Section Title */
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #222;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #D4AF37;
+  display: inline-block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column; /* Stack vertically */
+  }
+
+  .project-content,
+  .project-image {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Scroll and Fade Effect */
+.project-card {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(30px); /* Slightly pushed down */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.project-card.show {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Natural position */
+}

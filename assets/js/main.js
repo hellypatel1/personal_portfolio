@@ -72,4 +72,27 @@ document.addEventListener("DOMContentLoaded", () => {
     // Listen to scroll events
     window.addEventListener("scroll", scrollCallback);
   });
-  
+
+// Project Section - Scroll
+document.addEventListener("DOMContentLoaded", () => {
+  const projectCards = document.querySelectorAll(".project-card");
+
+  // Function to check if an element is in the viewport
+  const isInViewport = (element) => {
+    const rect = element.getBoundingClientRect();
+    return rect.top < window.innerHeight - 100; // Offset of 100px
+  };
+
+  // Scroll event listener to add 'show' class
+  const handleScroll = () => {
+    projectCards.forEach((card) => {
+      if (isInViewport(card)) {
+        card.classList.add("show");
+      }
+    });
+  };
+
+  // Trigger on page load and scroll
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // Run once on page load
+});
