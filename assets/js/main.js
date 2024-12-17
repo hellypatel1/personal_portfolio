@@ -117,3 +117,21 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(skill); // Observe each skill card
   });
 });
+
+// Contact Section - Fade-in effect
+document.addEventListener("DOMContentLoaded", () => {
+  const contactSection = document.querySelector(".contact-section");
+
+  const fadeInOnScroll = () => {
+    const sectionTop = contactSection.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (sectionTop < windowHeight - 100) {
+      contactSection.classList.add("show");
+    }
+  };
+
+  // Trigger on load and scroll
+  fadeInOnScroll();
+  window.addEventListener("scroll", fadeInOnScroll);
+});
