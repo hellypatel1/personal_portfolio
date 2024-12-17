@@ -446,3 +446,127 @@
   opacity: 1; /* Fully visible */
   transform: translateY(0); /* Natural position */
 }
+
+/* Skills Section */
+.skills-section {
+  padding: 80px 0; /* Vertical spacing for the section */
+  background-color: #fafafa; /* Light background for clean visuals */
+  text-align: center;
+}
+
+/* Section Title */
+.skills-section .section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #1f1f1f;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.skills-section .section-title::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #ffc107; /* Golden highlight line under title */
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.skills-section .intro-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(280px, 1fr)); /* Wider cards */
+  gap: 2rem; /* Space between cards */
+  margin-top: 2rem;
+  justify-content: center;
+  max-width: 1200px; /* Optional: Ensures clean alignment */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Individual Skill Card */
+.skill {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Subtle background gradient */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(30px); /* Starts slightly lower */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Visible state when scrolled into view */
+.skill.fade-in {
+  opacity: 1;
+  transform: translateY(0); /* Moves to its natural position */
+}
+
+.skill:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Hover effect for depth */
+}
+
+/* Skill Icon */
+.skill-icon img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.skill:hover .skill-icon img {
+  transform: scale(1.1) translateY(-5px); /* Bounce effect on hover */
+}
+
+/* Skill Title */
+.skill h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin-bottom: 0.8rem;
+}
+
+/* Skill Description */
+.skill p {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Highlighted Keywords */
+.skill p .highlight {
+  color: #ffc107; /* Golden highlight for key text */
+  font-weight: 600;
+}
+
+/* Responsive Design for Medium Screens */
+@media (max-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+}

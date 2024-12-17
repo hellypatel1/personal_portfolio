@@ -96,3 +96,24 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", handleScroll);
   handleScroll(); // Run once on page load
 });
+
+// Skills Section - Fade-in effect
+document.addEventListener("DOMContentLoaded", function () {
+  const skills = document.querySelectorAll(".skill");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in"); // Adds fade-in class
+          observer.unobserve(entry.target); // Stops observing after animation
+        }
+      });
+    },
+    { threshold: 0.2 } // Trigger when 20% of the element is visible
+  );
+
+  skills.forEach((skill) => {
+    observer.observe(skill); // Observe each skill card
+  });
+});
