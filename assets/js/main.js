@@ -52,4 +52,24 @@ document.addEventListener("scroll", function () {
     // Listen for scroll event
     window.addEventListener("scroll", fadeInHero);
   });
+
+  // About Section - Scroll Animation
+document.addEventListener("DOMContentLoaded", () => {
+    const scrollElements = document.querySelectorAll(".scroll-effect");
+  
+    const scrollCallback = () => {
+      scrollElements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= window.innerHeight - 100) {
+          el.classList.add("show");
+        }
+      });
+    };
+  
+    // Initial check on page load
+    scrollCallback();
+  
+    // Listen to scroll events
+    window.addEventListener("scroll", scrollCallback);
+  });
   

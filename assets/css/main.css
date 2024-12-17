@@ -243,3 +243,86 @@
     }
   }
   
+  .about-section {
+    padding: 80px 0 50px; /* Golden Ratio Spacing */
+    text-align: center;
+    position: relative;
+    background-color: #fff;
+  }
+  
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* Section Title */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; /* Dramatic Impact */
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #D4AF37; /* Golden Highlight */
+    display: inline-block;
+  }
+  
+  /* Intro Quote Text */
+  .intro-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  /* Highlight Keywords */
+  .highlight {
+    background: linear-gradient(90deg, #D4AF37, #b2912e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+  
+  /* Description and Values */
+  .about-description,
+  .about-values {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+    color: #444;
+  }
+  
+  /* Call-To-Action Button */
+  .about-button {
+    display: inline-block;
+    background-color: #D4AF37;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-button:hover {
+    transform: scale(1.05); /* Subtle Growth Effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: #b2912e;
+  }
+
+  /* Scroll Animation */
+.scroll-effect {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Starts slightly down */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .scroll-effect.show {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Return to normal position */
+  }
+  
